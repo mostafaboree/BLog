@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Register">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_regiset"
+        android:layout_width="285dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/image"
+        android:maxWidth="120dp"
+        android:maxHeight="120dp"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toTopOf="@+id/et_name_reg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/et_name_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/iv_regiset"
+        app:layout_constraintStart_toStartOf="@+id/iv_regiset"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/edittext"
+        android:textSize="24sp"
+        />
+
+    <EditText
+        android:id="@+id/ed_reg_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Email"
+        app:layout_constraintEnd_toEndOf="@+id/et_name_reg"
+
+        app:layout_constraintStart_toStartOf="@+id/et_name_reg"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_reg"
+        android:background="@drawable/edittext"
+        android:textSize="24sp"
+        />
+
+    <EditText
+        android:id="@+id/ed_reg_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="password"
+        android:background="@drawable/edittext"
+        app:layout_constraintEnd_toEndOf="@+id/ed_reg_email"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ed_reg_email"
+        app:layout_constraintTop_toBottomOf="@+id/ed_reg_email"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/bt_reg_reg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="register"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/et_name_reg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_name_reg"
+        android:background="@drawable/backgroung_bt"
+        app:layout_constraintTop_toBottomOf="@+id/ed_reg_password"
+        app:layout_constraintVertical_bias="0.0"
+        android:textColor="#fff"
+        android:textSize="24sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    style="@style/AppTheme.NoActionBar"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CommentDetilse">
+
+    <ImageView
+        android:id="@+id/iv_detlise_post"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/tv_title_detilse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:padding="5dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_detlise_post" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_frind_detilse"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/blo"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_detilse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="@+id/iv_detlise_post"
+        app:layout_constraintTop_toTopOf="@+id/tv_title_detilse"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <view
+        android:id="@+id/view"
+        class="androidx.constraintlayout.utils.widget.ImageFilterView"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_detilse"
+        />
+
+    <TextView
+        android:id="@+id/tv_data_detilse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginEnd="8dp"
+        android:text="@string/data"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_description_detlise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="8dp"
+        android:padding="5dp"
+        android:text="TextViewgg         gggtttttt    ttttttttttt
+        tttttttt       tttttt ttttt
+
+        tttttttttt"
+        android:textColor="#2d2d2d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data_detilse" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_detlise_user"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/blog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_detlise"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/ed_comment_detlise"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/comment_background"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="write comment"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_detlise_user"
+        app:layout_constraintEnd_toStartOf="@+id/bt_add_detlise"
+        app:layout_constraintStart_toEndOf="@+id/iv_detlise_user"
+        app:layout_constraintTop_toTopOf="@+id/iv_detlise_user"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bt_add_detlise"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/circle_add"
+        android:text="add"
+        app:layout_constraintBottom_toBottomOf="@+id/ed_comment_detlise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ed_comment_detlise"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_comment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/cardview_light_background"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_description_detlise"
+        app:layout_constraintTop_toBottomOf="@+id/iv_detlise_user" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

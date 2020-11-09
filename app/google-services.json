@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "876452920774",
+    "firebase_url": "https://chattest-eee2e.firebaseio.com",
+    "project_id": "chattest-eee2e",
+    "storage_bucket": "chattest-eee2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876452920774:android:0a258944bc669c938c06c7",
+        "android_client_info": {
+          "package_name": "com.mostafabor3e.mychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876452920774-lqaojirq1mgbh8nu0khs92geeess5ch3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mostafabor3e.mychat",
+            "certificate_hash": "0b3ba807a5a544afae9b89c4ee7186fab76ce8cb"
+          }
+        },
+        {
+          "client_id": "876452920774-6ouhtb6jnp1a86cup7eq3kdg48s6cr0d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvrFG9g6YkqECfYkD_YNDMjMr4FLGN7_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876452920774-6ouhtb6jnp1a86cup7eq3kdg48s6cr0d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
