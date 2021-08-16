@@ -1,4 +1,4 @@
-package com.mostafabor3e.mychat;
+package com.mostafabor3e.mychat.Activity.Adapter;
 
 import android.content.Context;
 import android.text.format.DateFormat;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.mostafabor3e.mychat.R;
 import com.mostafabor3e.mychat.model.Comment;
 
 import java.util.Calendar;

@@ -1,4 +1,4 @@
-package com.mostafabor3e.mychat.Activity;
+package com.mostafabor3e.mychat.Activity.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

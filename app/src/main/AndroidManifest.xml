@@ -12,21 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.CommentDetilse"></activity>
+        <activity android:name=".Activity.ui.CommentDetilse"></activity>
         <activity
-            android:name=".Activity.Home"
+            android:name=".Activity.ui.Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Activity.Start">
+        <activity android:name=".Activity.ui.Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.Login" />
-        <activity android:name=".Activity.Register" />
+        <activity android:name=".Activity.ui.MainActivity" />
+        <activity android:name=".Activity.ui.slideshow.Login" />
+        <activity android:name=".Activity.ui.Register" />
     </application>
 
 </manifest>

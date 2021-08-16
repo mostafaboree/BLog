@@ -18,7 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.mostafabor3e.mychat.Activity.*;
+import com.mostafabor3e.mychat.Activity.Adapter.AdapterPost;
+import com.mostafabor3e.mychat.Activity.ui.CommentDetilse;
 import com.mostafabor3e.mychat.R;
 import com.mostafabor3e.mychat.model.Poast;
 
@@ -51,6 +52,7 @@ DatabaseReference reference;
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                poasts.clear();
                 for (DataSnapshot snap:snapshot.getChildren()){
                     Poast poast=snap.getValue(Poast.class);
                     poasts.add(poast);

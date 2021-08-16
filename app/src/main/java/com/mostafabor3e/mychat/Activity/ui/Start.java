@@ -1,4 +1,4 @@
-package com.mostafabor3e.mychat.Activity;
+package com.mostafabor3e.mychat.Activity.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mostafabor3e.mychat.Activity.ui.slideshow.Login;
 import com.mostafabor3e.mychat.R;
 
 public class Start extends AppCompatActivity {
@@ -22,7 +23,7 @@ FirebaseUser firebaseUser;
         setContentView(R.layout.activity_start);
         firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
         if (firebaseUser!=null){
-Intent intent=new Intent(getBaseContext(),Home.class);
+Intent intent=new Intent(getBaseContext(), Home.class);
 startActivity(intent);
 finish();
         }
@@ -31,14 +32,14 @@ finish();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getBaseContext(),Login.class);
+                Intent intent=new Intent(getBaseContext(), Login.class);
                 startActivity(intent);
             }
         });
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getBaseContext(), com.mostafabor3e.mychat.Activity.Register.class);
+                Intent intent=new Intent(getBaseContext(), com.mostafabor3e.mychat.Activity.ui.Register.class);
                 startActivity(intent);
             }
         });

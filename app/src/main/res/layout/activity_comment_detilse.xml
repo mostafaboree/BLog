@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     style="@style/AppTheme.NoActionBar"
     android:layout_height="match_parent"
-    tools:context=".Activity.CommentDetilse">
+    tools:context=".Activity.ui.CommentDetilse">
 
     <ImageView
         android:id="@+id/iv_detlise_post"

@@ -1,4 +1,4 @@
-package com.mostafabor3e.mychat.Activity;
+package com.mostafabor3e.mychat.Activity.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,10 +13,8 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,16 +24,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 import com.mostafabor3e.mychat.R;
-
-import java.time.Instant;
-import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -99,7 +93,13 @@ StorageReference storageReference;
                   updateUserInfo(username,imageUri,firebaseUser);
                 }
                 else {
-                    Toast.makeText(Register.this, "con't create new user", Toast.LENGTH_SHORT).show();
+                  task.addOnFailureListener(new OnFailureListener() {
+                      @Override
+                      public void onFailure(@NonNull Exception e) {
+                          Toast.makeText(Register.this, "con't create new user"+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                      }
+                  });
                 }
             }
         });
@@ -160,7 +160,7 @@ StorageReference storageReference;
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Intent intent=new Intent(getBaseContext(),Home.class);
+                                Intent intent=new Intent(getBaseContext(), Home.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();

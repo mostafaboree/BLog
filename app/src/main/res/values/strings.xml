@@ -31,4 +31,5 @@
     <string name="settings">settings</string>
     <string name="data">28jul / 2020 22:10 pm</string>
     <string name="textname">this name not username ,this name willbe visible to your Blogs contacts</string>
+    <string name="blog">Blog</string>
 </resources>

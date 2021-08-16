@@ -1,4 +1,4 @@
-package com.mostafabor3e.mychat.Activity;
+package com.mostafabor3e.mychat.Activity.ui;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,7 +20,6 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.mostafabor3e.mychat.Activity.ui.slideshow.Login;
 import com.mostafabor3e.mychat.R;
 import com.mostafabor3e.mychat.model.Poast;
 
@@ -45,7 +44,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.mostafabor3e.mychat.Activity.Register.image_return;
+import static com.mostafabor3e.mychat.Activity.ui.Register.image_return;
 
 public class Home extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
     ImageView imageProfile;
@@ -84,7 +83,7 @@ getpostPhoto();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.nav_logout)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.start)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -130,11 +129,15 @@ Email.setText(firebaseUser.getEmail());
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.nav_logout){
-            Intent intent=new Intent(getBaseContext(),Start.class);
+        /*int id=item.getItemId();
+        if (id == R.id.nav_logout) {
+            Intent intent = new Intent(Home.this, Login.class);
+            Toast.makeText(this, "why", Toast.LENGTH_SHORT).show();
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
-        }
+        }*/
         return false;
     }
     private void iniPopup() {

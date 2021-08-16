@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.mostafabor3e.mychat.Activity.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
-
-    </fragment>
+        tools:layout="@layout/fragment_home"
+       />
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -25,8 +24,10 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <activity
-        android:id="@+id/nav_logout"
-        android:name="com.mostafabor3e.mychat.Activity.Start"
-        android:label="activity_start"
-        tools:layout="@layout/activity_start" />
+        android:id="@+id/register"
+        android:name="com.mostafabor3e.mychat.Activity.ui.Register"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" />
+
+
 </navigation>
