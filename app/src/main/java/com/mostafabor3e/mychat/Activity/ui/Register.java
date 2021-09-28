@@ -121,13 +121,13 @@ StorageReference storageReference;
             imageProfile.setImageURI(imageUri);
         }
     }
-    private String getFileExtension(Uri uri) {
+  /*  private String getFileExtension(Uri uri) {
         ContentResolver contentResolver = getBaseContext().getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
-    }
+    }*/
 
-    public void uploade(){
+   /* public  void uploadImage(Uri imageUri){
         final StorageReference storage= FirebaseStorage.getInstance().getReference("uploads");
         final UploadTask uploadTask=storage.putFile(imageUri);
         uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
@@ -140,8 +140,8 @@ StorageReference storageReference;
             }
         });
 
-    }
-    private void updateUserInfo(final String name, final Uri pickedImgUri, final FirebaseUser currentUser) {
+    }*/
+    public void updateUserInfo(final String name, final Uri pickedImgUri, final FirebaseUser currentUser) {
 
     StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
     final StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());

@@ -1,14 +1,23 @@
 package com.mostafabor3e.mychat.model;
 
 public class User {
-    private String id;
-    private  String username;
-    private String image_url;
+    protected String id;
+    protected   String username;
+    protected String image_url;
+    protected  String gmail;
+
 
     public User(String id, String username, String image_url) {
         this.id = id;
         this.username = username;
         this.image_url = image_url;
+    }
+
+    public User(String id, String username, String image_url, String gmail) {
+        this.id = id;
+        this.username = username;
+        this.image_url = image_url;
+        this.gmail = gmail;
     }
 
     public User(){
@@ -38,5 +47,13 @@ public class User {
 
     public void setImage_url(String image_url) {
         this.image_url = image_url;
+    }
+
+    public String getGmail() {
+        return gmail;
+    }
+
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
     }
 }

@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     style="@style/AppTheme.NoActionBar"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.ui.CommentDetilse">
-
+<com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/appbarsize"
+    tools:ignore="MissingConstraints"
+    android:background="@color/cardview_light_background"
+    >
+    <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_scrollFlags="scroll">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <ImageView
         android:id="@+id/iv_detlise_post"
         android:layout_width="0dp"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_launcher_background" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_title_detilse"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
         android:padding="5dp"
+        android:text="TextView"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,10 +60,9 @@
         class="androidx.constraintlayout.utils.widget.ImageFilterView"
         android:layout_width="0dp"
         android:layout_height="2dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_detilse"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_detilse" />
 
     <TextView
         android:id="@+id/tv_data_detilse"
@@ -75,67 +87,73 @@
         android:layout_marginTop="8dp"
         android:lineSpacingExtra="8dp"
         android:padding="5dp"
-        android:text="TextViewgg         gggtttttt    ttttttttttt
-        tttttttt       tttttt ttttt
-
-        tttttttttt"
+        android:text="@string/detliestext"
         android:textColor="#2d2d2d"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_data_detilse" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+</com.google.android.material.appbar.AppBarLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/row_custom_comment"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/iv_detlise_user" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_detlise_user"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_weight="1"
         android:src="@drawable/blog"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description_detlise"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/ed_comment_detlise"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/comment_background"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="write comment"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_detlise_user"
-        app:layout_constraintEnd_toStartOf="@+id/bt_add_detlise"
-        app:layout_constraintStart_toEndOf="@+id/iv_detlise_user"
-        app:layout_constraintTop_toTopOf="@+id/iv_detlise_user"
-        app:layout_constraintVertical_bias="0.0" />
+        <EditText
+            android:id="@+id/ed_comment_detlise"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
 
-    <Button
-        android:id="@+id/bt_add_detlise"
-        android:layout_width="0dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/circle_add"
-        android:text="add"
-        app:layout_constraintBottom_toBottomOf="@+id/ed_comment_detlise"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ed_comment_detlise"
-        app:layout_constraintVertical_bias="1.0" />
+            android:layout_weight="1"
+            android:background="@drawable/comment_background"
+            android:ems="10"
+            android:hint="write comment"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_detlise_user"
+            app:layout_constraintEnd_toStartOf="@+id/bt_add_detlise"
+            app:layout_constraintStart_toEndOf="@+id/iv_detlise_user"
+            app:layout_constraintTop_toTopOf="@+id/iv_detlise_user"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_comment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/cardview_light_background"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tv_description_detlise"
-        app:layout_constraintTop_toBottomOf="@+id/iv_detlise_user" />
+        <Button
+            android:id="@+id/bt_add_detlise"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="24dp"
+            android:layout_weight="1"
 
+            android:background="@drawable/circle_add"
+            android:text="add"
+            app:layout_constraintBottom_toBottomOf="@+id/ed_comment_detlise"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ed_comment_detlise"
+            app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

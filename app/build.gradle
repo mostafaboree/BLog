@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    dataBinding{
+        enabled true
+    }
 
     defaultConfig {
         applicationId "com.mostafabor3e.mychat"
@@ -46,6 +49,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.5.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.google.firebase:firebase-storage:19.2.0'
+ //   implementation "io.reactivex.rxjava3:rxjava:3.0.0"
 
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
