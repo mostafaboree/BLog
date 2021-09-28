@@ -110,7 +110,6 @@ Register register;
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.iv_ed_name:
-             //   Toast.makeText(register, "", Toast.LENGTH_SHORT).show();
                 updateUserInfo(galleryBinding.tvNameuserProfile.getText().toString(),imag,firebaseUser,
                         galleryBinding.tvProfilePhone.getText().toString(),galleryBinding.tvEmailProfile.getText().toString(),
                         galleryBinding.tvBio.getText().toString());
